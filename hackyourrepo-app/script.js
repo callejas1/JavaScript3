@@ -28,18 +28,16 @@ const placeholderRepos = [
 ];
 
 // get options name and value from array
-for (let i = 0; i < placeholderRepos.length; i++) {
-  let dropdownList = document.createElement('option');
-  // this will be used to match the repo name
-  dropdownList.value = i;
-  // once match is found it will create the text that goes inside option tag
-  const txt = document.createTextNode(placeholderRepos[i].name);
-  dropdownList.appendChild(txt);
-  selectTag.appendChild(dropdownList);
+function getRepoList(arr) {
+  arr.forEach((element, i) => {
+    const dropdownList = document.createElement('option');
+    dropdownList.value = i;
+    dropdownList.innerText = element.name;
+    selectTag.appendChild(dropdownList);
+  });
 }
 
-// display table of each selected option
-selectTag.addEventListener('change', function () {
+function changeOption() {
   const choice = placeholderRepos[this.value]; // get option value to match obj value pair
   tableData.innerHTML = `
     <strong>Repository: </strong>
@@ -53,4 +51,10 @@ selectTag.addEventListener('change', function () {
     `;
   table.appendChild(tableData);
   repoContainer.appendChild(table);
-});
+}
+
+// Option list output
+getRepoList(placeholderRepos);
+
+// display table(card) from each selected option
+selectTag.addEventListener('change', changeOption);
