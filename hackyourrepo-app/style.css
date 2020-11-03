@@ -41,10 +41,10 @@ select {
 .container {
   display: flex;
   color: black;
+  margin-bottom: 4em;
 }
 /* Repo and contr. sections (with details) */
 .repo-container {
-  display: block;
   margin: 0.5em;
   padding: 1em;
   background-color: white;
@@ -54,28 +54,21 @@ select {
 }
 /* Header -CONTRIBUTORS- grayed out */
 .contributor-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   color: #928f8f;
-  margin: 1.5em;
 }
+
 /* Contributors pic + username + contributions */
 .contributors-table {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   background-color: white;
-  margin: auto;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-right: auto;
+  margin-top: 1em;
   border-radius: 2px;
-  box-shadow: 0px 0px 5px #eee;
-  width: 100%;
+  box-shadow: 0px 0px 10px #aca4ac;
 }
 
 img {
+  margin: 1em 0em 1em 1em;
   width: 50px;
 }
 
@@ -87,10 +80,10 @@ img {
   color: #fff;
   background-color: #bbbbc4;
   margin-left: auto;
-  margin-right: 4px;
+  margin-right: 1em;
   border: 1px solid #eee;
   border-radius: 5px;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 5px;
 }
 
 .my-github:hover,
@@ -115,8 +108,8 @@ img {
 
 footer {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background-color: #21abcd;
   position: fixed;
   left: 0;
@@ -142,10 +135,6 @@ footer {
 
   .repo-container {
     width: 100%;
-  }
-
-  footer {
-    position: sticky;
   }
 }
 
