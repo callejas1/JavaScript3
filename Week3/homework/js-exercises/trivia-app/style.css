@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace:wght@600&display=swap');
+
+/* override browser's default */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply imported font to entire body */
+body {
+  padding: 5px;
+  font-size: 16px;
+  font-family: 'Trispace', sans-serif;
+  background: linear-gradient(90deg, #9dc2ff, #ffd8d8);
+  color: #fff;
+}
+
+/* Display header text, questions & answer in column */
+.header,
+.questionsHolder {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.trivia-heading,
+.advise-heading {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 2em 0em;
+}
+
+/* Make buttons more visible and remove default settings */
+.questionBtn {
+  text-align: center;
+  justify-self: center;
+  font-family: 'Trispace', sans-serif;
+  padding: 1em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.questionBtn:hover,
+.questionBtn:active {
+  background-color: #9dc2ff;
+  outline: #fff;
+}
+/* animate collapsible answers */
+.answerElement {
+  text-align: center;
+  justify-self: center;
+  margin: 1em;
+  max-height: 0;
+  transition: 0.2s ease-out;
+}
