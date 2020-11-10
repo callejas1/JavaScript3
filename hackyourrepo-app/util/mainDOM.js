@@ -36,7 +36,7 @@ export function bodyStructure() {
       </section>
     </section>
     <footer>
-      <p>HackYourRepo <strong>II</strong> by <a href="https://github.com/callejas1" target="_blank" class="my-github">Yoselyn Callejas</a></p>
+      <p>HackYourRepo <strong>III</strong> by <a href="https://github.com/callejas1" target="_blank" class="my-github">Yoselyn Callejas</a></p>
     </footer>
   </main>
 `);
