@@ -32,7 +32,7 @@ export function pagination(arr) {
     btn.classList = 'btn-number';
     btn.innerText = page;
     if (currentPage === page) btn.classList = 'btn-number active'; // this will change the color if selected/current page is being viewed
-
+    if (pageCount === 1) btn.style.display = 'none'; // do not display page number btn if only 1 page
     btn.addEventListener('click', () => {
       currentPage = page;
       displayContributors(items, contributorsDiv, rows, currentPage); // add elements to DOM (only the 5 contributors per page)
@@ -40,6 +40,7 @@ export function pagination(arr) {
       currentNumber.classList.remove('active');
       btn.classList.add('active');
     });
+    if (pageCount === 1) previous.style.display = 'none'; // do not display previous btn if only 1 page
 
     // Subtracting one to currentPage to show the previous 5 contributors, if it's the 1st page, it won't go back
     previous.addEventListener('click', () => {
@@ -53,6 +54,8 @@ export function pagination(arr) {
 
     return btn;
   };
+
+  if (pageCount === 1) next.style.display = 'none'; // do not display next btn if only 1 page
 
   // Adding one to currentPage to show the previous 5 contributors, if it's the last page, it won't go further
   next.addEventListener('click', () => {
