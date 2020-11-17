@@ -52,7 +52,7 @@ const arrayOfWords = ['cucumber', 'tomatos', 'avocado'];
 
 async function makeAllCaps(arr) {
   try {
-    const veggiePromised = await arr.map((veggie) => {
+    const veggiePromised = arr.map((veggie) => {
       // will return each value to Upper Case if condition is met
       if (typeof veggie === 'string') {
         return veggie.toUpperCase();
@@ -62,11 +62,13 @@ async function makeAllCaps(arr) {
       }
     });
 
-    console.log(veggiePromised);
+    return veggiePromised;
   } catch (error) {
-    console.log(`Something went wrong. ${error}`);
+    return error;
   }
   // log desired output to the console --> ['CUCUMBER', 'TOMATOS', 'AVOCADO']
 }
 
-makeAllCaps(arrayOfWords);
+makeAllCaps(arrayOfWords)
+  .then((veggies) => console.log(veggies))
+  .catch((err) => console.log(`Something went wrong. ${err}`));

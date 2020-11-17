@@ -18,10 +18,7 @@ window.onload = async () => {
     const sortedRepos = getOptionList(fetchData);
     // event listener activates the repository info display and contributors details
     selectElement.addEventListener('change', async (e) => {
-      const selectedRepoDetails = await addRepoToDOM(
-        sortedRepos,
-        e.target.value,
-      );
+      const selectedRepoDetails = addRepoToDOM(sortedRepos[e.target.value]);
       // pass selected repo value to fetch new API request for contributors details
       await fetchContributors(selectedRepoDetails);
     });

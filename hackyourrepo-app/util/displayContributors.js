@@ -8,9 +8,7 @@ export const displayContributors = (items, container, rowsPerPage, page) => {
   let end = start + rowsPerPage;
   let paginatedItems = items.slice(start, end);
 
-  for (let i = 0; i < paginatedItems.length; i++) {
-    let item = paginatedItems[i];
-
+  for (const item of paginatedItems) {
     // this is where the username, avatar and contributions will go
     let contributorsDivNode = document.createElement('div');
     contributorsDivNode.innerHTML = `
